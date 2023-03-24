@@ -1,13 +1,2 @@
 #!/bin/bash
-
-current_dir=$(pwd)
-parent_dir=$(dirname "$current_dir")
-
-for file in "$current_dir"/*.html; do
-    filename=$(basename "$file")
-    dest_file="$parent_dir/$filename"
-    if [ ! -e "$dest_file" ] || [ "$file" -nt "$dest_file" ]; then
-        cp -p "$file" "$dest_file"
-    fi
-done
-
+cp -ru ./*.html ../
